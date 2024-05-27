@@ -45,6 +45,19 @@ namespace DogBuilderApp
         }
 
         public Dog getDog() => _dog;
+
+        public Dog ResetAndGetDog()
+        {
+            Dog retDog = _dog;
+
+            _dog = new Dog();
+            _dog.Name = "Безымянный";
+            _dog.Breed = "Дворняга";
+            _dog.Age = 1;
+            _dog.Toys = new List<string>();
+
+            return retDog;
+        }
     }
 
 }
