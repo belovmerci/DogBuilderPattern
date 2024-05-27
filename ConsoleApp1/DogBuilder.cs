@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace DogBuilderApp
 {
     public class DogBuilder : IAnimalBuilder
     {
@@ -36,7 +36,11 @@ namespace ConsoleApp1
         public IAnimalBuilder setToys(List<string> toys)
         {
             if (_dog.Toys == null) _dog.Toys = toys;
-            else _dog.Toys.AddRange(toys);
+            else
+            {
+                if (toys != null) _dog.Toys.AddRange(toys);
+                else _dog.Toys = new List<string>();
+            }
             return this;
         }
 

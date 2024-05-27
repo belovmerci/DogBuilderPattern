@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace DogBuilderApp
 {
     public class Dog
     {
@@ -36,5 +36,20 @@ namespace ConsoleApp1
             set { _toys = value; }
         }
 
+        public void toConsole()
+        {
+            Console.WriteLine($"Имя: {Name}");
+            Console.WriteLine($"Порода: {Breed}");
+            Console.WriteLine($"Возраст: {Age}");
+            if (Toys != null && Toys.Count != 0)
+            {
+                Console.WriteLine("Игрушки собаки:");
+                foreach (string toy in Toys!)
+                {
+                    Console.WriteLine(toy);
+                }
+            }
+            Console.WriteLine();
+        }
     }
 }
